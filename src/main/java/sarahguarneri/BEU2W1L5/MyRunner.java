@@ -35,6 +35,13 @@ public class MyRunner implements CommandLineRunner {
 //        userService.save(user1);
 //        userService.save(user2);
 //        userService.save(user3);
+        List<User> users = new ArrayList<>();
+        users.add(user1);
+        users.add(user2);
+        users.add(user3);
+        users.add(user4);
+        users.add(user5);
+
 
         Edificio e1 = new Edificio("Edificio1", "Via Carlo Cattaneo 12", "Bologna");
         Edificio e2 = new Edificio("Edificio2", "Via Emanuele 3", "Brindisi");
@@ -53,8 +60,15 @@ public class MyRunner implements CommandLineRunner {
 //        postazioneService.save(p3);
 //        postazioneService.save(p4);
 //        postazioneService.save(p5);
+        List<Postazione> postazioni = new ArrayList<>();
+        postazioni.add(p1);
+        postazioni.add(p2);
+        postazioni.add(p3);
+        postazioni.add(p4);
+        postazioni.add(p5);
 
         postazioneService.filterByCity("Gallarate").forEach(System.out::println);
         postazioneService.filterByCityAndType("Gallarate", Tipo.PRIVATO).forEach(System.out::println);
+
     }
 }

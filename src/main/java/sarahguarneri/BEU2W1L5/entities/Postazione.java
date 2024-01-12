@@ -24,12 +24,14 @@ public class Postazione {
     @JoinColumn(name = "edificio_id")
     private Edificio edificio;
     @ManyToMany
-    private List<User> user = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
     public Postazione(String descrizione, int maxPersone, Tipo tipo, Edificio edificio) {
         this.descrizione = descrizione;
         this.maxPersone = maxPersone;
         this.tipo = tipo;
         this.edificio = edificio;
+        this.users = new ArrayList<>();
     }
+
 }
