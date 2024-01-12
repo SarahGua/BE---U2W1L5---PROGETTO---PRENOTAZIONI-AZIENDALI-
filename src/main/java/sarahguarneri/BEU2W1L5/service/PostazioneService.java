@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import sarahguarneri.BEU2W1L5.DAO.PostazioneDAO;
 import sarahguarneri.BEU2W1L5.entities.Postazione;
 
+import java.util.List;
+
 @Service
 public class PostazioneService {
 
@@ -14,4 +16,8 @@ public class PostazioneService {
     public void save(Postazione postazione){
         postazioneDAO.save(postazione);
     }
+
+//    public List<Postazione> filterByCity(String citta){
+//        return postazioneDAO.findByCity(citta);
+//    }
 }

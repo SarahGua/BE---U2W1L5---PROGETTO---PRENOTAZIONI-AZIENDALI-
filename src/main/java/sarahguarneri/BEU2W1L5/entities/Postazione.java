@@ -31,6 +31,5 @@ public class Postazione {
         this.maxPersone = maxPersone;
         this.tipo = tipo;
         this.edificio = edificio;
-        this.user = user;
     }
 }

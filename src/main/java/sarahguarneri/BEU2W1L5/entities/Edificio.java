@@ -1,10 +1,7 @@
 package sarahguarneri.BEU2W1L5.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -20,16 +17,15 @@ public class Edificio {
     @Id
     @GeneratedValue
     private UUID id;
-    private String nome;
-    private String indirizzo;
-    private String citta;
+    private String nome_edificio;
+    private String indirizzo_edificio;
+    private String citta_edificio;
     @OneToMany(mappedBy = "edificio")
     private List<Postazione> postazione = new ArrayList<>();
 
     public Edificio(String nome, String indirizzo, String citta) {
-        this.nome = nome;
-        this.indirizzo = indirizzo;
-        this.citta = citta;
-        this.postazione = postazione;
+        this.nome_edificio = nome;
+        this.indirizzo_edificio = indirizzo;
+        this.citta_edificio = citta;
     }
 }
