@@ -54,6 +54,7 @@ public class MyRunner implements CommandLineRunner {
 //        postazioneService.save(p4);
 //        postazioneService.save(p5);
 
-//        postazioneService.filterByCity("Gallarate").forEach(System.out::println);
+        postazioneService.filterByCity("Gallarate").forEach(System.out::println);
+        postazioneService.filterByCityAndType("Gallarate", Tipo.PRIVATO).forEach(System.out::println);
     }
 }

@@ -17,15 +17,15 @@ public class Edificio {
     @Id
     @GeneratedValue
     private UUID id;
-    private String nome_edificio;
-    private String indirizzo_edificio;
-    private String citta_edificio;
+    private String nome;
+    private String indirizzo;
+    private String citta;
     @OneToMany(mappedBy = "edificio")
     private List<Postazione> postazione = new ArrayList<>();
 
     public Edificio(String nome, String indirizzo, String citta) {
-        this.nome_edificio = nome;
-        this.indirizzo_edificio = indirizzo;
-        this.citta_edificio = citta;
+        this.nome = nome;
+        this.indirizzo = indirizzo;
+        this.citta = citta;
     }
 }
