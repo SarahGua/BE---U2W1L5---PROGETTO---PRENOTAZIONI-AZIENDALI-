@@ -11,7 +11,6 @@ import java.util.UUID;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
 public class Prenotazione {
     @Id
@@ -19,4 +18,9 @@ public class Prenotazione {
     private UUID id;
     private User user;
     private Postazione postazione;
+
+    public Prenotazione(User user, Postazione postazione) {
+        this.user = user;
+        this.postazione = postazione;
+    }
 }

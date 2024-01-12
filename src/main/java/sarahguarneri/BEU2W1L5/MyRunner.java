@@ -3,12 +3,10 @@ package sarahguarneri.BEU2W1L5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import sarahguarneri.BEU2W1L5.entities.Edificio;
-import sarahguarneri.BEU2W1L5.entities.Postazione;
-import sarahguarneri.BEU2W1L5.entities.Tipo;
-import sarahguarneri.BEU2W1L5.entities.User;
+import sarahguarneri.BEU2W1L5.entities.*;
 import sarahguarneri.BEU2W1L5.service.EdificioService;
 import sarahguarneri.BEU2W1L5.service.PostazioneService;
+import sarahguarneri.BEU2W1L5.service.PrenotazioneService;
 import sarahguarneri.BEU2W1L5.service.UserService;
 
 import java.util.ArrayList;
@@ -23,6 +21,9 @@ public class MyRunner implements CommandLineRunner {
     EdificioService edificioService;
     @Autowired
     PostazioneService postazioneService;
+
+    @Autowired
+    PrenotazioneService prenotazioneService;
 
     @Override
     public void run(String... args) throws Exception {
@@ -69,6 +70,9 @@ public class MyRunner implements CommandLineRunner {
 
         postazioneService.filterByCity("Gallarate").forEach(System.out::println);
         postazioneService.filterByCityAndType("Gallarate", Tipo.PRIVATO).forEach(System.out::println);
+
+        Prenotazione pr1 = new Prenotazione(user1, p4);
+        prenotazioneService.save(pr1, user1, p4);
 
     }
 }
